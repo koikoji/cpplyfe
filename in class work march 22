@@ -1,0 +1,165 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main()
+
+{
+/*
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~in class loop practice 3/20~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	//1. counter-controlled loop
+	//read 5 numbers from the console and compute
+	//the sum, average, max and min of the numbers
+	// declare and intialize the counter
+	
+	int counter = 0;
+	int Sum = 0;
+	int Max = -1000;
+	int Min = -2000;
+
+	while (counter < 5)
+
+	{
+
+	int N;
+	cout << "\nEnter a number:";
+	cin >> N;
+	cout << "\nThe number is: " << N;
+
+	Sum = Sum + N;
+
+	cout << "\n\nThe sum of the number(s) is: " << Sum;
+
+	if (N > Max)
+
+	Max = N;
+
+	counter++;
+
+	}
+
+
+
+	float Average = static_cast<float>(Sum) / counter;
+	cout << "\n\nThe average of the numbers is " << Average;
+	cout << "\n\nThe max of the number is " << Max;
+
+
+
+
+	int Sum;
+	int Number;
+
+	Sum = 0;
+	int NumberOfNumbers;
+	const int SENTINEL;
+
+	while (Number != SENTINEL)
+	{
+		Sum = Sum + Number;
+		NumberOfNumbers++;
+
+		cout << "\n\nEnter a number (use " << SENTINEL << " to stop): ";
+
+
+	}
+*/
+
+
+
+
+
+
+/*
+//~~~~~~~~~~~~~~~~~~~~~in class objective~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+int i;
+
+for (i = 5; i <= 5; i++)
+{
+cout << "* \n";
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~class average program~~~~~~~~~~~~~~~~~~~~~~~~~
+
+float test1;
+float test2;
+float test3;
+float quizAvg;
+float hwkAvg;
+float attendance;
+float finalExam;
+float finAvg;
+
+cout << "Please enter your grade for test 2: ";
+cin >> test2;
+cout << endl;
+
+cout << "Please enter your grade for test 3: ";
+cin >> test3;
+cout << endl;
+
+cout << "Please enter your grade for quiz average: ";
+cin >> quizAvg;
+cout << endl;
+
+cout << "Please enter your grade for homework average: ";
+cin >> hwkAvg;
+cout << endl;
+
+cout << "Please enter your grade for attendance: ";
+cin >> attendance;
+cout << endl;
+
+cout << "Please enter your final exam grade: ";
+cin >> finalExam;
+cout << endl;
+
+finAvg = .48*((finalExam + test2 + test3) / 3) + .12*(quizAvg) + .16*(hwkAvg) + .02*(attendance) + .22*(finalExam);
+
+cout << "\n\nYour course final average is: " << finAvg;
+cout << endl;
+cout << endl;
+cout << endl;
+
+//~~~~~~~~~~~~~~~~~~~~~~~in class march 22~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+ifstream in("InputDataFile.txt");
+
+do
+{
+	//read line from file (name number)
+	//read name
+	string Name;
+	in >> Name;
+	//read number
+	int Number;
+	in >> Number;
+
+	// check if it reaches the end
+	if (in.eof())
+		break;
+
+	//output into a table
+	cout << setw(7) << left << Name
+		<< setw(4) << right << Number
+		<< " \n";
+	
+} while (in);
+
+
+in.close();
+
+
+	cout << "\n\nPress any key to exit...";
+	_getch();
+
+	return 0;
+
+}
