@@ -1,0 +1,61 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+//function to enter an intergral numner M from the user
+
+int EnterNumber()
+{
+	int N;
+	cout << "enter an integer: ";
+	cin >> N;
+	//return N to main function below
+	return N;
+}
+
+//function to print out an intergral num
+
+void PrintNumber(int N)//if a function doesnt return a value use VOID
+{
+	cout << "the number is: " << N;
+}
+
+int SumNumbers(int A, int B)
+{
+	int Sum = A + B;
+	return Sum;
+}
+int main()
+{
+	int M;
+	int M2;
+	int N1;
+	//read an intergral number from user and store as "M"
+	cout << "Please enter a number: ";
+	cin >> M;
+	cout << endl;
+	cout << "The number is: " << M;
+	cout << endl << endl; //spacing
+
+	//ask the user for a second number then display that number
+	cout << "please enter a second number: ";
+	cin >> M2;
+	cout << endl;
+	cout << "The second number you entered is: " << M2;
+	cout << endl << endl; //spacing
+	
+	//call upon function EnterNumber
+
+	N1 = EnterNumber();
+	cout << endl << endl;
+
+	//call on printing fuction
+	PrintNumber(N1);
+	cout << endl << endl;
+
+	cout << "Press any key to exit...";
+	_getch();
+    return 0;
+}
