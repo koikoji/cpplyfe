@@ -6,14 +6,12 @@ using namespace std;
 
 //function to enter an intergral numner M from the user
 
-int EnterNumber()
-{
-	int N;
-	cout << "enter an integer: ";
-	cin >> N;
-	//return N to main function below
-	return N;
-}
+//void EnterNumberWithReference(int &N)
+//{
+//	int N;
+//	cout << "enter an integer: ";
+//	cin >> N;
+//}
 
 //function to print out an intergral num
 
@@ -27,35 +25,107 @@ int SumNumbers(int A, int B)
 	int Sum = A + B;
 	return Sum;
 }
+
+void PrintNumOnetoHundred()
+{
+	int k;
+	cout << "\n\nthe numbers from 1 to 100: ";
+	for (k = 1; k <= 100; k++)
+		cout << k << " ";
+}
+
+void PrintBetweenAandB(int A, int B)
+{
+	int k;
+	cout << "\n\nthe numbers from " << A << " to "<< B << " are: ";
+	for (k = A; k <= B; k++)
+		cout << k << " ";
+}
+
+void PrintEvenBetweenAandB(int A, int B)
+{
+	int k;
+	cout << "\n\nthe even numbers from " << A << " to " << B << " are: ";
+	for (k = A; k <= B; k++)
+		if (k%2==0)
+			cout << k << " ";
+		
+}
+
+void PrintOddBetweenAandB(int A, int B)
+{
+	int k;
+	cout << "\n\nthe odd numbers from " << A << " to " << B << " are: ";
+	for (k = A; k <= B; k++)
+		if ((k % 2 == -1)||(k % 2 == 1))
+			cout << k << " ";
+}
+int EnterNumberBetweenAandB(int A, int B)
+{
+	int N;
+	do
+	{
+		cout << "\nEnter an Integer between " << A << " and " << B << ": ";
+		cin >> N;
+
+		if ((A <= N) && (N <= B))
+			return N;
+		else
+			cout << "The number is not between " << A << " and " << B << ".";
+	} while (!(A <= N) && (N <= B));
+}
+
 int main()
 {
-	int M;
-	int M2;
-	int N1;
-	//read an intergral number from user and store as "M"
-	cout << "Please enter a number: ";
-	cin >> M;
+//	int M;
+//	int M2;
+//	int N1;
+//	//read an intergral number from user and store as "M"
+//	cout << "Please enter a number: ";
+//	cin >> M;
+//	cout << endl;
+//	cout << "The number is: " << M;
+//	cout << endl << endl; //spacing
+//
+//						  //ask the user for a second number then display that number
+//	cout << "please enter a second number: ";
+//	cin >> M2;
+//	cout << endl;
+//	cout << "The second number you entered is: " << M2;
+//	cout << endl << endl; //spacing
+//
+//						  //call upon function EnterNumber
+//
+////	N1 = EnterNumber();
+//	cout << endl << endl;
+//
+//	//call on printing fuction
+//	PrintNumber(N1);
+//	cout << endl << endl;
+//
+//	//call enternumberwithreference
+//	int N4;
+//	EnterNumberWithReference(N4);
+//	
+//	
+//	//PrintNumberWithLable(N4, "N4");
+
+	PrintNumOnetoHundred();
+
+	PrintBetweenAandB(1, 10);
+	PrintBetweenAandB(1, 20);
+	PrintBetweenAandB(9, 55);
+	PrintBetweenAandB(444, 555);
+
+	PrintEvenBetweenAandB(2, 55);
+	PrintEvenBetweenAandB(6, 54);
+	PrintEvenBetweenAandB(5, 86);
+	PrintEvenBetweenAandB(65, 77);
+
+	PrintOddBetweenAandB(-10, 10);
+
 	cout << endl;
-	cout << "The number is: " << M;
-	cout << endl << endl; //spacing
-
-	//ask the user for a second number then display that number
-	cout << "please enter a second number: ";
-	cin >> M2;
-	cout << endl;
-	cout << "The second number you entered is: " << M2;
-	cout << endl << endl; //spacing
-	
-	//call upon function EnterNumber
-
-	N1 = EnterNumber();
-	cout << endl << endl;
-
-	//call on printing fuction
-	PrintNumber(N1);
-	cout << endl << endl;
-
 	cout << "Press any key to exit...";
 	_getch();
-    return 0;
+	return 0;
 }
